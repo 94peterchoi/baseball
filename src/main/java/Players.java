@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class Players {
 
-    private List<Car> playerList;
+    private final List<Car> playerList;
 
     public Players(List<Car> playerList) {
         this.playerList = playerList;

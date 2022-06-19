@@ -14,8 +14,9 @@ public class ResultView {
     }
 
     public static void printWinnerList(List<Car> winnerList) {
-        System.out.println("우승자는");
+        System.out.println("우승자는?");
         winnerList.forEach(winner -> System.out.println(winner.getName()));
+        System.out.println("입니다.");
     }
 
 }
