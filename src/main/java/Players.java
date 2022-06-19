@@ -11,11 +11,15 @@ public class Players {
         this.playerList = playerList;
     }
 
+    public List<Car> getPlayerList() {
+        return playerList;
+    }
+
     public static List<Car> makeCars(String carNames) {
         List<Car> cars = new ArrayList<>();
         String[] carList = carNames.split(",");
         for (String carName : carList) {
-            cars.add(new Car(carName, 0));
+            cars.add(new Car(carName, 1));
         }
         return cars;
     }
@@ -26,7 +30,7 @@ public class Players {
 
     public List<Car> getWinnerList(int winnerPosition) {
         return this.playerList.stream().filter((player) ->
-            player.getPosition() == winnerPosition
+            player.getCurrentPosition() == winnerPosition
         ).collect(Collectors.toList());
     }
 

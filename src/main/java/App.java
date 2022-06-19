@@ -5,18 +5,16 @@ public class App {
 
         InputView inputView = new InputView();
 
-        List<Car> cars = inputView.getCarNames();
+        Players players = new Players(inputView.getCarNames());
+        List<Car> playerCars = players.getPlayerList();
         int totalRound = inputView.decideTotalRound();
 
         for (int i = 0; i < totalRound; i++) {
-            cars.stream().forEach(car -> car.playRound());
-            ResultView.printResultOfEachRound(cars);
+            playerCars.forEach(Car::playRound);
+            ResultView.printResultOfEachRound(playerCars);
         }
 
-        Players players = new Players(cars);
         players.sortByPosition();
-
-        ResultView.printWinnerList(players.getWinnerList(cars.get(0).getPosition()));
-
+        ResultView.printWinnerList(players.getWinnerList(playerCars.get(0).getCurrentPosition()));
     }
 }

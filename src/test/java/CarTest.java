@@ -28,9 +28,9 @@ public class CarTest {
     @Test
     void 경주_전진_or_스톱() {
         Car car = new Car("fox", 0);
-        int originalPosition = car.getPosition();
+        int originalPosition = car.getCurrentPosition();
         car.playRound();
-        int newPosition = car.getPosition();
+        int newPosition = car.getCurrentPosition();
 
         assertThat(newPosition).isGreaterThanOrEqualTo(originalPosition);
     }
