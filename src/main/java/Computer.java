@@ -11,13 +11,12 @@ public class Computer {
         computerBalls.add(new Ball(1));
         computerBalls.add(new Ball(2));
         computerBalls.add(new Ball(3));
-
     }
 
     public int getStrikeCnt() {
         int strikeCnt = 0;
         for (int i = 0; i < userBalls.size(); i++) {
-            if (userBalls.get(i).getNo() == computerBalls.get(i).getNo()) {
+            if (userBalls.get(i).isStrike(computerBalls.get(i).getNo()).isStrike()) {
                 strikeCnt++;
             }
         }
@@ -26,19 +25,8 @@ public class Computer {
 
     public int getBallCnt() {
         int ballCnt = 0;
-        List<Ball> notStrikeBalls = new ArrayList<>();
 
-        for (int i =0; i < userBalls.size(); i++) {
-            if (userBalls.get(i).getNo() != computerBalls.get(i).getNo()) {
-                notStrikeBalls.add(userBalls.get(i));
-            }
-        }
 
-        for (int i =0; i < notStrikeBalls.size(); i++) {
-            if (computerBalls.contains(notStrikeBalls.get(i))) {
-                ballCnt++;
-            }
-        }
 
         return ballCnt;
     }

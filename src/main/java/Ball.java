@@ -5,8 +5,8 @@ public class Ball {
 
     int no;
 
-    public Ball (int no) {
-        if (no < MIN_NO || no > MAX_NO ) {
+    public Ball(int no) {
+        if (no < MIN_NO || no > MAX_NO) {
             throw new IllegalArgumentException("유효하지 않은 숫자");
         }
         this.no = no;
@@ -25,5 +25,20 @@ public class Ball {
 
         return this.no == ball.no;
     }
+
+    public BallStatus isStrike(int compareNo) {
+        if (this.no == compareNo) {
+            return BallStatus.STRIKE;
+        }
+        return null;
+    }
+
+    public BallStatus isBall(int compareNo, int index) {
+        if (this.no == compareNo) {
+            return BallStatus.BALL;
+        }
+        return null;
+    }
+
 
 }
