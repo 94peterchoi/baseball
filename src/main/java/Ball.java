@@ -5,11 +5,25 @@ public class Ball {
 
     int no;
 
-    public Ball (int userNo) {
-        if (userNo < MIN_NO || userNo > MAX_NO ) {
+    public Ball (int no) {
+        if (no < MIN_NO || no > MAX_NO ) {
             throw new IllegalArgumentException("유효하지 않은 숫자");
         }
-        this.no = userNo;
+        this.no = no;
+    }
+
+    public int getNo() {
+        return no;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Ball ball = (Ball) o;
+
+        return this.no == ball.no;
     }
 
 }
