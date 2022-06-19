@@ -1,6 +1,6 @@
 public class Score {
-    private int strikeCnt;
-    private int ballCnt;
+    public int strikeCnt;
+    public int ballCnt;
 
     public String getScoreResult() {
         String scoreMessage = "";

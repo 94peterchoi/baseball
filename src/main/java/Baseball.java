@@ -1,8 +1,6 @@
 public class Baseball {
-    private String strNumber;
-//    int strikeCnt;
-//    int ballCnt;
-    int[] numDeck = new int[]{1,2,3,4,5,6,7,8,9};;
+    public String strNumber;
+    int[] numDeck = new int[]{1,2,3,4,5,6,7,8,9};
 
     public Baseball() {
         strNumber = createRandomNumber();
@@ -16,7 +14,7 @@ public class Baseball {
 
     private void shuffleDeck() {
         for (int i = 0; i < 20; i++) {
-            int tmp = 0;
+            int tmp;
             int randomNum = (int) (Math.random() * 9);
 
             tmp = numDeck[0];
@@ -27,5 +25,9 @@ public class Baseball {
 
     public String getStrNumber() {
         return strNumber;
+    }
+
+    public void setStrNumber(String strNumber) {
+        this.strNumber = strNumber;
     }
 }
