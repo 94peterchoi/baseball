@@ -1,5 +1,3 @@
-import java.util.Comparator;
-
 public class Position implements Comparable<Position> {
 
     public final int position;
@@ -36,12 +34,6 @@ public class Position implements Comparable<Position> {
 
     @Override
     public int compareTo(Position p) {
-        if (this.position > p.position) {
-            return 1;
-        }
-        if (this.position < p.position) {
-            return -1;
-        }
-        return 0;
+        return Integer.compare(this.position, p.position);
     }
 }

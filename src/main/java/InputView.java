@@ -6,8 +6,7 @@ public class InputView {
 
     public static String getCarNames() {
         System.out.println("경기에 내보낼 자동차를 입력하세요(최소 한 개 이상)");
-        String carNames = scanner.nextLine();
-        return carNames;
+        return scanner.nextLine();
     }
 
     public static int getRoundTotal() {

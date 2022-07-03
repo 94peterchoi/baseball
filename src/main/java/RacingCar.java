@@ -39,7 +39,7 @@ public class RacingCar {
 
     public void play(List<Car> players, int round) {
         for (int i=0; i<round; i++) {
-            players.forEach((player) -> player.race());
+            players.forEach(Car::race);
             System.out.println();
         }
     }
