@@ -40,15 +40,8 @@ public class RacingCar {
     public void play(List<Car> players, int round) {
         for (int i=0; i<round; i++) {
             players.forEach((player) -> player.race());
+            System.out.println();
         }
-    }
-
-    public void printWinners(List<Car> winners) {
-        System.out.print("우승자는 ");
-        winners.forEach((winner) -> {
-            System.out.print(winner.toString() + ",");
-        });
-        System.out.print("입니다.");
     }
 
 }

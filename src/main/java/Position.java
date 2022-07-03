@@ -2,7 +2,7 @@ import java.util.Comparator;
 
 public class Position implements Comparable<Position> {
 
-    private int position;
+    public final int position;
 
     public Position(int position) {
         checkValidation(position);
@@ -15,8 +15,8 @@ public class Position implements Comparable<Position> {
         }
     }
 
-    public void move() {
-        this.position++;
+    public Position move() {
+        return new Position(this.position + 1);
     }
 
     @Override

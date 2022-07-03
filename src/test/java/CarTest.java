@@ -32,16 +32,19 @@ public class CarTest {
         Car car = new Car("abc");
         Position pos = car.getPosition();
 
-        assertThat(pos).isEqualTo(new Position(0));
+        assertThat(pos.equals(new Position(0))).isEqualTo(true);
 
         car.race(4);
-        assertThat(pos).isEqualTo(new Position(1));
+        pos = car.getPosition();
+        assertThat(pos.equals(new Position(1))).isEqualTo(true);
 
         car.race(3);
+        pos = car.getPosition();
         assertThat(pos).isEqualTo(new Position(1));
 
         car.race(9);
-        assertThat(pos).isEqualTo(new Position(99));
+        pos = car.getPosition();
+        assertThat(pos).isNotEqualTo(new Position(99));
     }
 
     @Test
@@ -64,10 +67,6 @@ public class CarTest {
         assertThat(winnerList.get(0).toString()).isEqualTo("다비");
         assertThat(winnerList.get(1).toString()).isEqualTo("상욱");
     }
-
-
-
-
 
 
 }

@@ -16,17 +16,14 @@ public class Car {
 
     public void race() {
         if (getRamdomNo() >= 4) {
-            position.move();
+            this.position = position.move();
         }
-
-//        for (int i=0; i<position; i++) {
-//            System.out.println("-");
-//        }
+        ResultView.printRacing(name.toString(), position.position);
     }
 
     public void race(int no) {
         if (no >= 4) {
-            position.move();
+            this.position = position.move();
         }
     }
 
@@ -38,4 +35,6 @@ public class Car {
     public String toString() {
         return name.toString();
     }
+
+
 }
