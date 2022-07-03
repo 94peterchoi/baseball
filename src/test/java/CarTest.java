@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class CarTest {
@@ -11,9 +14,17 @@ public class CarTest {
             racingCar.makePlayers("");
         }).hasMessageContaining("최소 하나");
 
-        racingCar.makePlayers("ab,");
+        assertThatThrownBy(() -> {
+            racingCar.makePlayers("abcdef");
+        }).hasMessageContaining("5자");
 
+        List<Car> cars = racingCar.makePlayers("ab,");
+        assertThat(cars.size()).isEqualTo(1);
+        assertThat(cars.get(0).toString()).isEqualTo("ab");
 
+        cars = racingCar.makePlayers("ab, ab");
+        assertThat(cars.size()).isEqualTo(1);
+        assertThat(cars.get(0).toString()).isEqualTo("ab");
     }
 
 }

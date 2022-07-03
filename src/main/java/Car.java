@@ -1,13 +1,14 @@
 public class Car {
 
     Name name;
-
-    public Car() {
-
-    }
+    int position;
 
     public Car(String name) {
         this.name = new Name(name);
     }
 
+    @Override
+    public String toString() {
+        return name.toString();
+    }
 }
